@@ -10,10 +10,11 @@ void main(){
     
     printf("Enter no.of process: ");
     scanf("%d",&p);
+    for(i=0; i<p;i++)
+            finish[i]=0;
     printf("Enter no.of Resources: ");
     scanf("%d",&r);
-    for(i=0; i<p;i++){
-        finish[i]=0;
+    for(i=0; i<r;i++){
         printf("Resource %d Instances:",i+1);
         scanf("%d",&r_total[i]);
     }
@@ -75,6 +76,9 @@ void main(){
         printf("\nThe system executes all the process safely!\nSafe Sequence: ");
         for(i=0;i<p-1;i++)
             printf("%d ->",seq[i]);
-        printf("%d",seq[i]);
+        printf("%d\n",seq[i]);
+        printf("Resources availability\n");
+        for(j=0;j<r;j++)
+        printf("Resource %d: %d\n",j+1,avail_r[j]);
     }
 }
